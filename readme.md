@@ -55,6 +55,7 @@ composer require aammui/role-permission
 ##### Laravel Compatibility 
 | Laravel Version | Role Permission Version | Installation |
 |-----------------|-------------------------| --- |
+| 10.x – 13.x     | 3.2.x | ```composer require aammui/role-permission:^3.2``` |
 | 9.x             | 3.0.0 | ```composer require aammui/role-permission:3.0.0``` |
 | 8.x             | 2.0.0 | ```composer require aammui/role-permission:2.0.0``` |
 | 7.x             | 1.0.0 | ```composer require aammui/role-permission:1.0.0``` |

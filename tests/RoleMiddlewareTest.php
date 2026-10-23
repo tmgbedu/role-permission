@@ -8,6 +8,7 @@ use Aammui\RolePermission\Middleware\Role as RoleMiddleware;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use Illuminate\Support\Facades\Auth;
+use PHPUnit\Framework\Attributes\Test;
 
 class RoleMiddlewareTest extends TestCase
 {
@@ -20,7 +21,7 @@ class RoleMiddlewareTest extends TestCase
         $this->roleMiddleware = new RoleMiddleware();
     }
 
-    /** @test */
+    #[Test]
     public function a_user_can_access_a_route_protected_by_role_middleware_if_have_this_role()
     {
         $user = User::create(['email' => 'tyest@gmail.com']);
@@ -47,9 +48,8 @@ class RoleMiddlewareTest extends TestCase
 
     /**
      * A guest cannot access a route protected by rolemiddleware
-     *
-     * @test
      */
+    #[Test]
     public function UserNotLogin_exception_is_thrown_when_user_not_login()
     {
         $this->expectException(UserNotLoginException::class);
@@ -61,9 +61,8 @@ class RoleMiddlewareTest extends TestCase
 
     /**
      * A User cannot access a route protected by rolemiddleware
-     *
-     * @test
      */
+    #[Test]
     public function RoleDoesNotExist_exception_is_thrown_when_user_not_login()
     {
         $this->expectException(RoleDoesNotExistException::class);
