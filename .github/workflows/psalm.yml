@@ -5,7 +5,9 @@ on:
     paths:
       - '**.php'
       - 'psalm.xml.dist'
+      - 'psalm-baseline.xml'
       - 'composer.json'
+      - '.github/workflows/psalm.yml'
 
 jobs:
   psalm:
