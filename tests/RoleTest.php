@@ -3,10 +3,11 @@
 namespace Aammui\RolePermission\Tests;
 
 use Aammui\RolePermission\Models\Role;
+use PHPUnit\Framework\Attributes\Test;
 
 class RoleTest extends TestCase
 {
-    /** @test */
+    #[Test]
     public function role_can_assign_to_a_user()
     {
         $user = User::create(['email' => 'test@example.com']);
@@ -14,7 +15,7 @@ class RoleTest extends TestCase
         $this->assertEquals(1, Role::count());
     }
 
-    /** @test */
+    #[Test]
     public function user_has_got_a_role()
     {
         $user = User::create(['email' => 'test@example.com']);
@@ -22,7 +23,7 @@ class RoleTest extends TestCase
         $this->assertTrue($user->hasGotRole(['admin']));
     }
 
-    /** @test */
+    #[Test]
     public function roles_and_permission_are_case_insensetive()
     {
         $user = User::create(['email' => 'test@example.com']);
@@ -36,7 +37,7 @@ class RoleTest extends TestCase
         // admin and system admin, No multiple same role will be assigned.
     }
 
-    /** @test */
+    #[Test]
     public function role_can_be_accessed_from_logined_user()
     {
         $user = User::create(['email' => 'test@example.com']);
